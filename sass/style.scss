@@ -55,17 +55,7 @@ li {
 }
 
 .header-container {
-    height: 600px;
-
-    background: {
-        image: url('../public/images/b3.webp');
-        repeat: no-repeat;
-        position: center;
-        size: cover
-    }
-
-    clip-path: polygon(100% 0, 100% 100%, 0 95%, 0 0);
-
+    @include curvePage("curve")
 }
 
 .navbar-container {
@@ -75,8 +65,64 @@ li {
 }
 
 .nav-item-container {
-    @include setFlex(space-between, center, 30px, row)
+    @include setFlex(center, center, 30px, row)
 }
+
+.search-nav-container {
+    @include setFlex(space-between, center);
+    @include dark_blue_bg_alpha;
+    border-radius: 20px;
+    margin-top: 10px;
+    padding-left: 5px;
+
+    button {
+        @include setSize(50px, 50px);
+        @include high_lighter;
+        margin-right: -10px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+
+        img {
+            @include setSize(20px, 20px);
+        }
+
+        &:hover {
+            background: rgba(255, 106, 49, 1);
+
+        }
+    }
+}
+
+.search-bar-items {
+    @include setFlex(center, center, 15px);
+    margin: 5px;
+}
+
+.search-bar-item {
+    @include setFlex(center, center);
+    color: $color-light;
+
+    img {
+        @include setSize(20px, 20px);
+    }
+
+    .down-arrow {
+        @include setSize(10px, 10px);
+    }
+
+    &:hover {
+        background: $color-dark-bg;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+    }
+
+}
+
+
+
 
 .profile-cart-container {
     @include setFlex(center, center, 10px, row)
@@ -147,6 +193,7 @@ li {
         background-color: rgba($color: $color-light, $alpha: 0.5);
         color: $color-dark;
         cursor: pointer;
+        transition: all .3s ease-in-out;
     }
 }
 
@@ -158,14 +205,14 @@ li {
 }
 
 .trending-header {
-    @include setFlex(space-around, center);
+    @include setFlex(center, center, 55%);
     padding: 3em;
 
     h4 {
         color: $color-light;
     }
 
-    Button {
+    button {
         padding: 7px 15px;
         background: $color-dark-bg;
         border: 1px solid $color-light;
@@ -176,6 +223,7 @@ li {
             background: $color-light;
             color: $color-dark-bg;
             cursor: pointer;
+            transition: all .3s ease-in-out;
         }
     }
 }
@@ -188,6 +236,9 @@ li {
 .card-bg {
     @include setSize(300px, 200px);
     background-image: url('../public/images/b6.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     position: relative;
     border-radius: 5px;
 }
@@ -215,5 +266,9 @@ li {
 
     #trendings {
         @include setFlex(center, center, 10px, column);
+    }
+
+    .header-container {
+        @include curvePage("none");
     }
 }

@@ -10,12 +10,17 @@
 
 @mixin high_lighter {
     background: rgb(255, 106, 49);
-    background: linear-gradient(180deg, rgba(255, 106, 49, 1) 0%, rgba(255, 189, 27, 1) 64%, rgba(255, 224, 77, 1) 100%);
+    background: linear-gradient(180deg, rgba(255, 106, 49, 1) 0%, rgb(255, 137, 27) 64%, rgb(252, 166, 73) 100%);
 }
 
 @mixin dark_bg_alpha {
     background: rgb(0, 2, 3);
     background: linear-gradient(180deg, rgba(0, 2, 3, 0.9626444327731093) 0%, rgba(0, 0, 0, 0.7945772058823529) 24%, rgba(159, 159, 159, 0) 100%);
+}
+
+@mixin dark_blue_bg_alpha {
+    background: rgb(13, 20, 33);
+    background: linear-gradient(90deg, rgba(13, 20, 33, 1) 0%, rgba(40, 53, 73, 1) 43%, rgba(63, 73, 92, 0.9738489145658263) 100%);
 }
 
 @mixin setFlex($justify-content, $align-items, $gap: 10px, $direction: row) {
@@ -35,4 +40,20 @@
     padding: 10px 30px 10px 10px;
     clip-path: polygon(86% 0, 100% 100%, 0 100%, 0 0);
     border-radius: $radius;
+}
+
+
+@mixin curvePage($isCurve: "curve", $height: 600px) {
+    height: $height;
+
+    background: {
+        image: url('../public/images/b3.webp');
+        repeat: no-repeat;
+        position: center;
+        size: cover
+    }
+
+    @if($isCurve) {
+        clip-path: polygon(100% 0, 100% 100%, 0 95%, 0 0);
+    }
 }
