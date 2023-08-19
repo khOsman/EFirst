@@ -277,13 +277,15 @@ li {
 }
 
 .card-bg {
-    @include setSize(300px, 200px);
-    background-image: url('../public/images/b6.webp');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
     position: relative;
-    border-radius: 5px;
+
+    img {
+        @include setSize(300px, 200px);
+        border-radius: 5px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
 }
 
 .card-badge-curve {

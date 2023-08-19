@@ -4,27 +4,30 @@ import Card from './components/card';
 const trendings = [
     {
         _id: "1",
-        title: "Sengoku Dynasty",
+        title: "Armored Core 6",
         price: "19.99",
-        discount: "-26"
+        discount: "-26",
+        image: "./public/images/b4.webp"
     },
     {
         _id: "2",
-        title: "Sims 4 Horse Ranch",
+        title: "Madden 24",
         price: "30.99",
-        discount: "-23"
+        discount: "-23",
+        image: "./public/images/b5.webp"
     },
     {
         _id: "3",
         title: "Reminant 2",
         price: "34.89",
-        discount: "-30"
+        discount: "-30",
+        image: "./public/images/b6.webp"
     }
 
 ]
 
 
-trendings.map((item) => Card(item.title, item.price, item.discount));
+trendings.map((item) => Card(item.title, item.price, item.discount, item.image));
 
 
 
