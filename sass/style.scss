@@ -68,6 +68,49 @@ li {
     @include setFlex(center, center, 30px, row)
 }
 
+.search-bar-input-container {
+    @include setFlex(center, center);
+    margin-top: 15px;
+
+    button {
+        border: none;
+        background: transparent;
+        color: $color-light;
+    }
+}
+
+.search-bar-input {
+    z-index: 4;
+    @include setFlex(space-between, center);
+    background: linear-gradient(90deg, rgba(255, 106, 49, 1) 0%, rgb(255, 137, 27) 64%, rgb(252, 166, 73) 100%);
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+
+    padding: 10px 15px;
+
+    input {
+        width: 50%;
+        padding: 0 10px;
+        border: none;
+        border-radius: 15px;
+        background: transparent;
+        outline: none;
+        color: $color-light;
+
+        &::placeholder {
+            color: $color-light;
+            opacity: 0.5;
+        }
+    }
+
+    p {
+        font-size: 0.8em;
+        color: $color-light;
+        opacity: 0.8;
+    }
+}
+
 .search-nav-container {
     @include setFlex(space-between, center);
     @include dark_blue_bg_alpha;
