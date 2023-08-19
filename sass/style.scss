@@ -64,11 +64,7 @@ li {
         size: cover
     }
 
-    margin-bottom: -100px;
-
-    // border: {
-    //     bottom-left-radius: 10px;
-    // }
+    clip-path: polygon(100% 0, 100% 100%, 0 95%, 0 0);
 
 }
 
@@ -115,10 +111,7 @@ li {
 
 .badge-curve {
     background: $color-orange;
-
-    padding: 10px 30px 10px 10px;
-    clip-path: polygon(86% 0, 100% 100%, 0 100%, 0 0);
-    border-radius: 5px;
+    @include setCurveBadge;
 }
 
 
@@ -153,19 +146,74 @@ li {
     &:hover {
         background-color: rgba($color: $color-light, $alpha: 0.5);
         color: $color-dark;
+        cursor: pointer;
     }
 }
 
-//Responsiveness
-
-/* For mobile phones: */
-[class*="col-"] {
-    width: 100%;
+.trending-container {
+    height: 100%;
+    padding: 3em;
+    background: $color-dark-bg;
+    margin-top: -1.9em;
 }
 
+.trending-header {
+    @include setFlex(space-around, center);
+    padding: 3em;
+
+    h4 {
+        color: $color-light;
+    }
+
+    Button {
+        padding: 7px 15px;
+        background: $color-dark-bg;
+        border: 1px solid $color-light;
+        border-radius: 5px;
+        color: $color-light;
+
+        &:hover {
+            background: $color-light;
+            color: $color-dark-bg;
+            cursor: pointer;
+        }
+    }
+}
+
+
+#trendings {
+    @include setFlex(center, center, 25px, row);
+}
+
+.card-bg {
+    @include setSize(300px, 200px);
+    background-image: url('../public/images/b6.webp');
+    position: relative;
+    border-radius: 5px;
+}
+
+.card-badge-curve {
+    background: $color-orange;
+    @include setCurveBadge;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+}
+
+.card-item-details {
+    margin-top: 5px;
+    @include setFlex(space-between, center);
+    color: $color-light;
+}
+
+//Responsiveness
 @media only screen and (max-width: 630px) {
 
     .navbar-container {
         @include setFlex(space-between, center, 20px, column);
+    }
+
+    #trendings {
+        @include setFlex(center, center, 10px, column);
     }
 }

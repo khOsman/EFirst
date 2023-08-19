@@ -30,3 +30,9 @@
     width: $wd;
     height: $ht;
 }
+
+@mixin setCurveBadge($radius: 5px) {
+    padding: 10px 30px 10px 10px;
+    clip-path: polygon(86% 0, 100% 100%, 0 100%, 0 0);
+    border-radius: $radius;
+}
