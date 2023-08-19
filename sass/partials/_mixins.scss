@@ -1,0 +1,32 @@
+@mixin theme($property, $light-color, $dark-color, $theme: "light") {
+    @if $current-theme ==$theme {
+        #{$property}: $light-color;
+    }
+
+    @else {
+        #{$property}: $dark-color;
+    }
+}
+
+@mixin high_lighter {
+    background: rgb(255, 106, 49);
+    background: linear-gradient(180deg, rgba(255, 106, 49, 1) 0%, rgba(255, 189, 27, 1) 64%, rgba(255, 224, 77, 1) 100%);
+}
+
+@mixin dark_bg_alpha {
+    background: rgb(0, 2, 3);
+    background: linear-gradient(180deg, rgba(0, 2, 3, 0.9626444327731093) 5%, rgba(124, 124, 124, 0.6937368697478992) 55%, rgba(159, 159, 159, 0) 100%);
+}
+
+@mixin setFlex($direction, $justify-content, $align-items, $gap: 20px) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    gap: $gap;
+}
+
+@mixin setSize($wd: 32px, $ht: 32px) {
+    width: $wd;
+    height: $ht;
+}
