@@ -8,24 +8,6 @@
     padding: 0;
 }
 
-.navbar-container {
-    @include dark_bg_alpha;
-    @include setFlex(row, space-between, center);
-    padding: 5px 10px;
-}
-
-.nav-item-container {
-    @include setFlex(row, space-between, center, 30px)
-}
-
-.profile-cart-container {
-    @include setFlex(row, center, center, 10px)
-}
-
-.icon {
-    @include setSize();
-}
-
 
 a {
     text-decoration: none;
@@ -39,7 +21,7 @@ a {
     }
 
     &:hover {
-        @include theme(color, $color-dark, $color-light, "dark");
+        @include theme(color, $color-dark, $color-light, "light");
 
     }
 
@@ -52,62 +34,141 @@ li {
     list-style: none;
 }
 
+.p-10 {
+    padding: 10px;
+}
 
+.pl-10 {
+    padding-left: 10px;
+}
+
+.pr-10 {
+    padding-right: 10px;
+}
+
+.pt-10 {
+    padding-top: 10px;
+}
+
+.pb-10 {
+    padding-bottom: 10px;
+}
+
+.header-container {
+    height: 600px;
+
+    background: {
+        image: url('../public/images/b3.webp');
+        repeat: no-repeat;
+        position: center;
+        size: cover
+    }
+
+}
+
+.navbar-container {
+    @include dark_bg_alpha;
+    @include setFlex(space-between, center);
+    padding: 5px 10px;
+}
+
+.nav-item-container {
+    @include setFlex(space-between, center, 30px, row)
+}
+
+.profile-cart-container {
+    @include setFlex(center, center, 10px, row)
+}
+
+.icon {
+    @include setSize();
+}
+
+.header-content-container {
+    color: $color-light;
+    @include setFlex(space-around, center);
+    padding-top: 10em;
+}
+
+.left-container {
+    @include setFlex(flex-start, flex-start, 5px, column);
+}
+
+.badge-price {
+    @include setFlex(space-between, center);
+}
+
+.badge {
+    background: $color-dark-bg;
+    padding: 7px 15px;
+
+    border: {
+        radius: 5px
+    }
+}
+
+.badge-curve {
+    background: $color-orange;
+
+    padding: {
+        top: 5px;
+        bottom: 5px;
+        left: 5px;
+        right: 10px;
+    }
+
+    border: {
+        top-left-radius: 5px;
+        top-right-radius: 15px;
+        bottom-right-radius: 10px;
+        bottom-left-radius: 5px;
+    }
+}
+
+
+.early-access-btn {
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    $b: .5em;
+    /* border width */
+    $c: 1em;
+    /* corner size */
+    $r: 0em;
+    /* corner rounding */
+    position: relative;
+    margin: 1em auto;
+    border: solid $b transparent;
+    padding: 1em;
+    max-width: 23em;
+    font: 1.25em ubuntu, sans-serif;
+
+    &::before {
+        position: absolute;
+        inset: calc(-1*$b);
+        border: inherit;
+        border-radius: $r;
+        background: linear-gradient(rgb(206, 205, 205), rgb(162, 161, 161), rgb(205, 205, 205)) border-box;
+        $corner: conic-gradient(from -90deg at $c $c, rgb(255, 255, 255) 25%, #ececec00 0) 0 0/ calc(100% - $c) calc(100% - $c) border-box;
+        $inner: conic-gradient(rgb(238, 238, 238) 0 0) padding-box;
+        mask: $corner subtract, $inner;
+        content: ''
+    }
+
+    &:hover {
+        background-color: rgba($color: $color-light, $alpha: 0.5);
+        color: $color-dark;
+    }
+}
 
 //Responsiveness
+
 /* For mobile phones: */
 [class*="col-"] {
     width: 100%;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 630px) {
 
-    /* For desktop: */
-    .col-1 {
-        width: $col-1;
-    }
-
-    .col-2 {
-        width: $col-2;
-    }
-
-    .col-3 {
-        width: $col-3;
-    }
-
-    .col-4 {
-        width: $col-4;
-    }
-
-    .col-5 {
-        width: $col-5;
-    }
-
-    .col-6 {
-        width: $col-6;
-    }
-
-    .col-7 {
-        width: $col-7;
-    }
-
-    .col-8 {
-        width: $col-8;
-    }
-
-    .col-9 {
-        width: $col-9;
-    }
-
-    .col-10 {
-        width: $col-10;
-    }
-
-    .col-11 {
-        width: $col-11;
-    }
-
-    .col-12 {
-        width: $col-12;
+    .navbar-container {
+        @include setFlex(space-between, center, 20px, column);
     }
 }

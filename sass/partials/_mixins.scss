@@ -15,10 +15,10 @@
 
 @mixin dark_bg_alpha {
     background: rgb(0, 2, 3);
-    background: linear-gradient(180deg, rgba(0, 2, 3, 0.9626444327731093) 5%, rgba(124, 124, 124, 0.6937368697478992) 55%, rgba(159, 159, 159, 0) 100%);
+    background: linear-gradient(180deg, rgba(0, 2, 3, 0.9626444327731093) 0%, rgba(0, 0, 0, 0.7945772058823529) 24%, rgba(159, 159, 159, 0) 100%);
 }
 
-@mixin setFlex($direction, $justify-content, $align-items, $gap: 20px) {
+@mixin setFlex($justify-content, $align-items, $gap: 10px, $direction: row) {
     display: flex;
     flex-direction: $direction;
     justify-content: $justify-content;
