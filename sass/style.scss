@@ -84,7 +84,7 @@ li {
 
 // ------ SEARCH BAR ---------
 .search-bar-input-container {
-    @include setFlex(center, center);
+    @include setFlex(center, center, 10px, row, "nowrap");
     margin-top: 15px;
 
     button {
@@ -96,7 +96,7 @@ li {
 
 .search-bar-input {
     z-index: 4;
-    @include setFlex(space-between, center, 10px, row, "nowrap");
+    @include setFlex(space-between, center);
     background: linear-gradient(90deg, rgba(255, 106, 49, 1) 0%, rgb(255, 137, 27) 64%, rgb(252, 166, 73) 100%);
     border: none;
     border-radius: 20px;
