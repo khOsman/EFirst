@@ -182,7 +182,7 @@ li {
     padding: 0.4em;
 
     img {
-        @include setSize(15px, 15px);
+        @include setSize(25px, 25px);
     }
 
     &:hover {
@@ -368,7 +368,7 @@ li {
 }
 
 .trending-header {
-    @include setFlex(center, center, 55%);
+    @include setFlex(space-around, center, 55%);
     padding: 3em;
 
     h4 {
@@ -463,6 +463,24 @@ li {
         @include curvePage("none");
     }
 
+    .dropdown-menu {
+
+        z-index: 15;
+
+    }
+
+    .platform-item {
+        @include setFlex(center, center);
+    }
+
+    .prepaid-item {
+        @include setFlex(center, center, 10px, column);
+
+        img {
+            @include setSize(20px, 20px);
+        }
+    }
+
     .search-nav-container {
         @include setFlex(space-around, center);
         @include dark_blue_bg_alpha;
@@ -505,7 +523,7 @@ li {
     }
 
     .trending-header {
-        @include setFlex(space-around, center, 20px);
+        @include setFlex(center, center, 20px, column);
     }
 
     #trendings {
