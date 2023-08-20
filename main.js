@@ -51,6 +51,27 @@ const trending = [
         price: "34.89",
         discount: "-30",
         image: "/images/b6.webp"
+    },
+    {
+        _id: "4",
+        title: "Armored Core 6",
+        price: "19.99",
+        discount: "-26",
+        image: "/images/b4.webp"
+    },
+    {
+        _id: "5",
+        title: "Madden 24",
+        price: "30.99",
+        discount: "-23",
+        image: "/images/b5.webp"
+    },
+    {
+        _id: "6",
+        title: "Reminant 2",
+        price: "34.89",
+        discount: "-30",
+        image: "/images/b6.webp"
     }
 
 ];
@@ -106,8 +127,10 @@ const prepaidItems = [
     }
 ];
 
-const body = document.querySelector('body');
+let temp = trending;
+
 const crossBtn = document.getElementById('crossBtn');
+const viewAllBtn = document.getElementById('viewAllBtn');
 const panelCrossBtn = document.getElementById('panelCrossBtn');
 const searchBtn = document.getElementById('searchBtn');
 const searchNavContainer = document.getElementById('searchNavContainer');
@@ -120,11 +143,17 @@ searchBarItems.map((item) => {
     SearchBarItem(item._id, item.title, item.icon, item.arrow);
     searchBarItemIDs.push(`searchBarItem${item._id}`);
 });
-trending.map((item) => Card(item._id, item.title, item.price, item.discount, item.image));
+trending.splice(3).map((item) => Card(item._id, item.title, item.price, item.discount, item.image));
 platformItems.map(item => PlatformItem(item.title, item.icon, "platform-item", "#platformBody"));
 prepaidItems.map(item => PlatformItem(item.title, item.icon, "prepaid-item", "#prepaidBody"));
 
 
+const handleViewAll = () => {
+    viewAllBtn.addEventListener('click', () => {
+        trending.map((item) => Card(item._id, item.title, item.price, item.discount, item.image));
+        viewAllBtn.classList.add('hide');
+    });
+}
 
 const handleOnClickBtn = (element, showElement, hideElement, callback) => {
     element.addEventListener('click', () => {
@@ -136,7 +165,7 @@ const handleOnClickBtn = (element, showElement, hideElement, callback) => {
         }
         if (hideElement) {
             hideElement.classList.add("hide");
-            callback();
+            if (callback) callback();
         }
         console.log(element + " Pointer down event");
     });
@@ -163,6 +192,8 @@ searchBarItemIDs.map(element => {
         searchBarItem.classList.add('active');
     })
 });
+
+handleViewAll();
 
 console.log(searchBarItemIDs);
 

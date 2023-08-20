@@ -57,7 +57,7 @@
         image: url('../public/images/b3.webp');
         repeat: no-repeat;
         position: center;
-        size: cover
+        size: cover;
     }
 
     @if($isCurve) {
