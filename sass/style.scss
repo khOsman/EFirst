@@ -2,7 +2,7 @@
 @import "partials/variables";
 @import "partials/mixins";
 
-
+// -------COMMON--------
 * {
     margin: 0;
     padding: 0;
@@ -64,10 +64,14 @@ li {
     padding-bottom: 10px;
 }
 
+//--------------------------
+
+// ------ HEADER SECTION --------
 .header-container {
     @include curvePage("curve")
 }
 
+// ------- NAVBAR ----------
 .navbar-container {
     @include dark_bg_alpha;
     @include setFlex(space-between, center);
@@ -78,7 +82,7 @@ li {
     @include setFlex(center, center, 30px, row)
 }
 
-
+// ------ SEARCH BAR ---------
 .search-bar-input-container {
     @include setFlex(center, center);
     margin-top: 15px;
@@ -122,9 +126,9 @@ li {
     }
 }
 
+// --------------------------------
+
 // --------DROPDOWN STYLES-----
-
-
 .dropdown-menu {
     position: absolute;
     z-index: 5;
@@ -218,6 +222,7 @@ li {
 
 // ----------------------------
 
+// ------- SEARCH ICON WITH NAV ITEM ---------------
 .search-nav-container {
     @include setFlex(space-between, center);
     @include dark_blue_bg_alpha;
@@ -271,9 +276,10 @@ li {
 
 }
 
+// ----------------------------------
 
 
-
+// ----- PROFILE & CART -------------
 .profile-cart-container {
     @include setFlex(center, center, 10px, row)
 }
@@ -282,6 +288,9 @@ li {
     @include setSize();
 }
 
+// ------------------------
+
+//-------- HEADER PAGE CONTENT --------
 .header-content-container {
     color: $color-light;
     @include setFlex(space-around, center);
@@ -346,6 +355,10 @@ li {
         transition: all .3s ease-in-out;
     }
 }
+
+//-------------------------------
+
+// -------- TRENDING ITEMS ----------
 
 .trending-container {
     height: 100%;
@@ -412,6 +425,7 @@ li {
     position: absolute;
     bottom: 0;
     z-index: 2;
+    color: $color-light;
 }
 
 .card-item-details {
@@ -420,18 +434,144 @@ li {
     color: $color-light;
 }
 
-//Responsiveness
-@media only screen and (max-width: 630px) {
+// ---------------------------------
+
+//---------- RESPONSIVENESS -----------
+@media only screen and (max-width: $sm) {
+
+    p,
+    button,
+    a {
+        font-size: 0.5em;
+    }
+
+
+
+    .platform-body {
+        @include setGrid(2);
+        margin-bottom: 0.2em;
+    }
+
 
     .navbar-container {
         @include setFlex(space-between, center, 20px, column);
     }
 
-    #trendings {
+    #trending {
         @include setFlex(center, center, 10px, column);
     }
 
     .header-container {
         @include curvePage("none");
     }
+
+
+    // ------- SEARCH ICON WITH NAV ITEM ---------------
+    .search-nav-container {
+        @include setFlex(space-around, center);
+        @include dark_blue_bg_alpha;
+        border-radius: 20px;
+        margin-top: 10px;
+        padding: 5px;
+
+        button {
+            @include setSize(30px, 30px);
+            @include high_lighter;
+            margin-right: -5px;
+            border: none;
+            border-radius: 50%;
+
+            img {
+                @include setSize(20px, 20px);
+            }
+        }
+    }
+
+    .search-bar-items {
+        @include setFlex(center, center, 10px);
+        margin: 5px;
+    }
+
+
+    // ----------------------------------
+
+    .header-content-container {
+        padding-top: 5em;
+    }
+
+
+    .early-access-btn {
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        $b: .5em;
+        /* border width */
+        $c: 1em;
+        /* corner size */
+        $r: 0em;
+        /* corner rounding */
+        position: relative;
+        margin: 0.5em auto;
+        border: solid $b transparent;
+        padding: 0.5em;
+        max-width: 5em;
+        color: $color-light;
+
+        &::before {
+            position: absolute;
+            inset: calc(-1*$b);
+            border: inherit;
+            border-radius: $r;
+            background: linear-gradient(rgb(206, 205, 205), rgb(162, 161, 161), rgb(205, 205, 205)) border-box;
+            $corner: conic-gradient(from -90deg at $c $c, rgb(255, 255, 255) 25%, #ececec00 0) 0 0/ calc(100% - $c) calc(100% - $c) border-box;
+            $inner: conic-gradient(rgb(238, 238, 238) 0 0) padding-box;
+            mask: $corner subtract, $inner;
+            content: ''
+        }
+
+        &:hover {
+            background-color: rgba($color: $color-light, $alpha: 0.5);
+            color: $color-dark;
+
+            transition: all .3s ease-in-out;
+        }
+
+        span {
+            font-size: 0.8em;
+        }
+    }
+
+    .trending-header {
+        @include setFlex(space-around, center, 20px);
+    }
+
+    #trendings {
+        @include setGrid(2);
+        margin-bottom: 1em;
+
+    }
+
+    .card-bg {
+        position: relative;
+        overflow: hidden;
+        border-radius: 5px;
+
+        img {
+            @include setSize(250px, 100px);
+            border-radius: 5px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            &:hover {
+                border-radius: 5px;
+                transform: scale(1.2);
+                transition: transform .3s ease-in-out;
+            }
+        }
+
+    }
+
+    .card-badge-curve {
+        @include setCurveBadge(5px, 10px, 10px, 5px, 10px);
+    }
+
 }

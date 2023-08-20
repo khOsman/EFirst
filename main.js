@@ -59,32 +59,32 @@ const platformItems = [
     {
         _id: 1,
         title: "Stream",
-        icon: "./public/images/stream.png"
+        icon: "/images/stream.png"
     },
     {
         _id: 2,
         title: "Rockstar",
-        icon: "./public/images/rockstar.png"
+        icon: "/images/rockstar.png"
     },
     {
         _id: 3,
         title: "Epic",
-        icon: "./public/images/epic.png"
+        icon: "/images/epic.png"
     },
     {
         _id: 4,
         title: "Microsoft Store",
-        icon: "./public/images/microsoft.png"
+        icon: "/images/microsoft.png"
     },
     {
         _id: 5,
         title: "Xbox",
-        icon: "./public/images/xbox.png"
+        icon: "/images/xbox.png"
     },
     {
         _id: 6,
         title: "Playstation",
-        icon: "./public/images/playstation.png"
+        icon: "/images/playstation.png"
     }
 ]
 
@@ -92,17 +92,17 @@ const prepaidItems = [
     {
         _id: 1,
         title: "Stream Gift Cards",
-        icon: "./public/images/card3.png"
+        icon: "/images/card3.png"
     },
     {
         _id: 2,
         title: "IG Gift cards",
-        icon: "./public/images/card2.png"
+        icon: "/images/card2.png"
     },
     {
         _id: 3,
         title: "Blizzard Gift Cards",
-        icon: "./public/images/card1.png"
+        icon: "/images/card1.png"
     }
 ];
 

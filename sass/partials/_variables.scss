@@ -1,24 +1,10 @@
 //Device screen sizes
-$xs : 575px; //<576px
+$xs : 360px; //<576px
 $sm : 576px; // >575px
 $md : 768px; // >= 768px
 $lg : 992px; // >=992px
 $xl : 1200px; // >=1200px
 $xxl: 1400px; // 1400px>=
-
-//Column ratio
-$col-1 : 8.33%;
-$col-2 : 16.66%;
-$col-3 : 25%;
-$col-4 : 33.33%;
-$col-5 : 41.66%;
-$col-6 : 50%;
-$col-7 : 58.33%;
-$col-8 : 66.66%;
-$col-9 : 75%;
-$col-10 : 83.33%;
-$col-11 : 91.66%;
-$col-12 : 100%;
 
 
 $current-theme: "dark";

@@ -29,6 +29,7 @@
     justify-content: $justify-content;
     align-items: $align-items;
     gap: $gap;
+    flex-wrap: wrap;
 }
 
 @mixin setGrid($column: 3, $fraction: 1fr, $gap: 20px) {
@@ -42,8 +43,8 @@
     height: $ht;
 }
 
-@mixin setCurveBadge($radius: 5px) {
-    padding: 10px 30px 10px 10px;
+@mixin setCurveBadge($radius: 5px, $pl: 10px, $pt: 30px, $pr: 10px, $pb: 10px) {
+    padding: $pl $pt $pr $pb;
     clip-path: polygon(86% 0, 100% 100%, 0 100%, 0 0);
     border-radius: $radius;
 }
