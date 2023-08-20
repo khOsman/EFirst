@@ -7,21 +7,21 @@ const trendings = [
         title: "Armored Core 6",
         price: "19.99",
         discount: "-26",
-        image: "./public/images/b4.webp"
+        image: "/images/b4.webp"
     },
     {
         _id: "2",
         title: "Madden 24",
         price: "30.99",
         discount: "-23",
-        image: "./public/images/b5.webp"
+        image: "/images/b5.webp"
     },
     {
         _id: "3",
         title: "Reminant 2",
         price: "34.89",
         discount: "-30",
-        image: "./public/images/b6.webp"
+        image: "/images/b6.webp"
     }
 
 ]

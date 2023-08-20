@@ -276,8 +276,13 @@ li {
     @include setFlex(center, center, 25px, row);
 }
 
+.card-container {
+    overflow: hidden;
+}
+
 .card-bg {
     position: relative;
+    overflow: hidden;
 
     img {
         @include setSize(300px, 200px);
@@ -285,7 +290,13 @@ li {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+
+        &:hover {
+            transform: scale(1.2);
+            transition: transform 400ms;
+        }
     }
+
 }
 
 .card-badge-curve {
