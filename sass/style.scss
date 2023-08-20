@@ -8,6 +8,13 @@
     padding: 0;
 }
 
+button {
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
 
 a {
     text-decoration: none;
@@ -68,6 +75,7 @@ li {
     @include setFlex(center, center, 30px, row)
 }
 
+
 .search-bar-input-container {
     @include setFlex(center, center);
     margin-top: 15px;
@@ -104,12 +112,93 @@ li {
         }
     }
 
-    p {
+    button {
         font-size: 0.8em;
         color: $color-light;
         opacity: 0.8;
     }
 }
+
+// --------DROPDOWN STYLES-----
+.dropdown-menu {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translate(25%, 10%);
+}
+
+.dropdown-menu-container {
+    width: 50%;
+    background: rgba(40, 53, 73, 0.9);
+    backdrop-filter: blur(100%);
+    margin: 0.5em;
+    font-weight: bold;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.platform-container {
+    // @include setFlex(space-between, center);
+}
+
+.platform-header {
+    @include setFlex(space-between, center);
+    background: rgba(0, 0, 0, 0.3);
+    color: $color-light;
+    padding: 10px;
+    border-radius: 5px;
+
+    button {
+        border: none;
+        background: transparent;
+        color: $color-light;
+    }
+}
+
+.platform-body {
+    @include setGrid;
+    margin-bottom: 0.3em;
+}
+
+.platform-item {
+    @include setFlex(flex-start, center);
+    color: $color-light;
+    margin-top: 0.4em;
+
+    border-radius: 0.8em;
+    padding: 0.4em;
+
+    img {
+        @include setSize(15px, 15px);
+    }
+
+    &:hover {
+        background: $color-dark-bg;
+    }
+}
+
+.prepaid-item {
+    @include setFlex(center, center, 10px, column);
+    color: $color-light;
+    margin-top: 0.4em;
+
+    border-radius: 0.8em;
+    padding: 0.4em;
+
+    img {
+        @include setSize(40px, 40px);
+    }
+
+    &:hover {
+        background: $color-dark-bg;
+    }
+}
+
+
+// ----------------------------
 
 .search-nav-container {
     @include setFlex(space-between, center);
@@ -124,7 +213,7 @@ li {
         margin-right: -10px;
         border: none;
         border-radius: 50%;
-        cursor: pointer;
+
 
         img {
             @include setSize(20px, 20px);
@@ -235,7 +324,7 @@ li {
     &:hover {
         background-color: rgba($color: $color-light, $alpha: 0.5);
         color: $color-dark;
-        cursor: pointer;
+
         transition: all .3s ease-in-out;
     }
 }
@@ -265,7 +354,7 @@ li {
         &:hover {
             background: $color-light;
             color: $color-dark-bg;
-            cursor: pointer;
+
             transition: all .3s ease-in-out;
         }
     }
@@ -293,7 +382,7 @@ li {
 
         &:hover {
             transform: scale(1.2);
-            transition: transform 400ms;
+            transition: transform .3s ease-in-out;
         }
     }
 
