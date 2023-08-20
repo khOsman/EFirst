@@ -32,34 +32,8 @@
         <!-- nav items with search -->
         <div id="searchNavContainer" class="search-nav-container">
           <!-- Search Icon -->
-          <div class="search-bar-items">
-            <!-- PC -->
-            <div class="search-bar-item">
-              <img src="/images/pc.png" alt="PC">
-              <p>PC</p>
-              <img class="down-arrow" src="/images/down_arrow.png" alt="down-arrow">
-            </div>
-
-            <!-- Playstation -->
-            <div class="search-bar-item">
-              <img src="/images/playstation.png" alt="PC">
-              <p>Playstation</p>
-              <img class="down-arrow" src="/images/down_arrow.png" alt="down-arrow">
-            </div>
-
-            <!-- Xbox -->
-            <div class="search-bar-item">
-              <img src="/images/xbox.png" alt="PC">
-              <p>Xbox</p>
-              <img class="down-arrow" src="/images/down_arrow.png" alt="down-arrow">
-            </div>
-
-            <!-- Nintendo -->
-            <div class="search-bar-item">
-              <img src="/images/nintendo.png" alt="PC">
-              <p>Nintendo</p>
-              <img class="down-arrow" src="/images/down_arrow.png" alt="down-arrow">
-            </div>
+          <div id="searchBarItems" class="search-bar-items">
+            <!-- Items will be generated from main.js -->
 
           </div>
           <div>
@@ -67,7 +41,7 @@
           </div>
         </div>
         <!-- Search bar  -->
-        <div id="searchBarInput" class="search-bar-input-container hide ">
+        <div id="searchBarInput" class="search-bar-input-container hide">
           <div class="search-bar-input">
             <input type="text" placeholder="Minecraft,RPG & Fifa">
             <button id="advance-search-btn">Advance search</button>
@@ -90,9 +64,10 @@
     </div>
     <!-- Navbar end -->
     <!-- Dropdown menu -->
-    <div class="dropdown-menu hide">
+    <div id="dropdownMenu" class="dropdown-menu hide">
       <div class="dropdown-menu-container">
         <div class="platform-container">
+
           <div class="platform-header">
             <p>Platforms</p>
             <button>View All</button>
@@ -107,6 +82,9 @@
           </div>
           <div id="prepaidBody" class="platform-body">
             <!-- Platform items will be generated from main.js -->
+          </div>
+          <div class="panel-cross-btn-container">
+            <button id="panelCrossBtn">X</button>
           </div>
         </div>
       </div>

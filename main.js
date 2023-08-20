@@ -1,8 +1,36 @@
 import './CSS/style.css'
 import Card from './components/card';
 import PlatformItem from './components/platformItem';
+import SearchBarItem from './components/searchBarItem';
 
-const trendings = [
+const searchBarItems = [
+    {
+        _id: 1,
+        title: "PC",
+        icon: "/images/pc.png",
+        arrow: "/images/down_arrow.png"
+    },
+    {
+        _id: 2,
+        title: "Playstation",
+        icon: "/images/playstation.png",
+        arrow: "/images/down_arrow.png"
+    },
+    {
+        _id: 3,
+        title: "Xbox",
+        icon: "/images/xbox.png",
+        arrow: "/images/down_arrow.png"
+    },
+    {
+        _id: 4,
+        title: "Nintendo",
+        icon: "/images/nintendo.png",
+        arrow: "/images/down_arrow.png"
+    },
+]
+
+const trending = [
     {
         _id: "1",
         title: "Armored Core 6",
@@ -78,36 +106,64 @@ const prepaidItems = [
     }
 ];
 
+const body = document.querySelector('body');
+const crossBtn = document.getElementById('crossBtn');
+const panelCrossBtn = document.getElementById('panelCrossBtn');
+const searchBtn = document.getElementById('searchBtn');
+const searchNavContainer = document.getElementById('searchNavContainer');
+const searchBarInput = document.getElementById('searchBarInput');
+const dropdownMenu = document.getElementById('dropdownMenu');
 
+const searchBarItemIDs = [];
 
-trendings.map((item) => Card(item.title, item.price, item.discount, item.image));
-
+searchBarItems.map((item) => {
+    SearchBarItem(item._id, item.title, item.icon, item.arrow);
+    searchBarItemIDs.push(`searchBarItem${item._id}`);
+});
+trending.map((item) => Card(item._id, item.title, item.price, item.discount, item.image));
 platformItems.map(item => PlatformItem(item.title, item.icon, "platform-item", "#platformBody"));
 prepaidItems.map(item => PlatformItem(item.title, item.icon, "prepaid-item", "#prepaidBody"));
 
 
-const crossBtn = document.getElementById('crossBtn');
-const searchBtn = document.getElementById('searchBtn');
-const searchNavContainer = document.getElementById('searchNavContainer');
-const searchBarInput = document.getElementById('searchBarInput');
 
-const handleSearchBtn = () => {
-    searchBtn.addEventListener('click', () => {
-        searchBarInput.classList.remove("hide");
-        searchNavContainer.classList.add("hide");
-        console.log('searchBtn', isClicked);
+const handleOnClickBtn = (element, showElement, hideElement, callback) => {
+    element.addEventListener('click', () => {
+        if (showElement) showElement.classList.remove("hide");
+        else {
+            searchBarItemIDs.map(e => {
+                document.getElementById(e).classList.remove('active');
+            })
+        }
+        if (hideElement) {
+            hideElement.classList.add("hide");
+            callback();
+        }
+        console.log(element + " Pointer down event");
     });
 }
 
-const handleCrossBtn = () => {
+//Search Btn handler
+handleOnClickBtn(searchBtn, searchBarInput, searchNavContainer, () => {
+    if (!dropdownMenu.classList.contains('hide')) dropdownMenu.classList.add('hide');
+});
+//Cross Btn handler
+handleOnClickBtn(crossBtn, searchNavContainer, searchBarInput);
+handleOnClickBtn(panelCrossBtn, null, dropdownMenu);
 
-    crossBtn.addEventListener('click', () => {
-        searchBarInput.classList.add("hide");
-        searchNavContainer.classList.remove("hide");
-        console.log('searchBtn', isClicked);
-    });
 
-}
+searchBarItemIDs.map(element => {
+    console.log('element', element);
+    const searchBarItem = document.getElementById(element);
+    //Cross Btn handler
+    searchBarItem.addEventListener('click', () => {
+        dropdownMenu.classList.remove('hide');
+        searchBarItemIDs.map(e => {
+            document.getElementById(e).classList.remove('active');
+        })
+        searchBarItem.classList.add('active');
+    })
+});
 
-handleSearchBtn();
-handleCrossBtn();
+console.log(searchBarItemIDs);
+
+

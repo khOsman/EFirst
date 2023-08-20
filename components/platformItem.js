@@ -10,6 +10,7 @@ const PlatformItem = (title, imgSrc, className, elementID) => {
 `;
 
     platform.innerHTML += template;
+
 }
 
 export default PlatformItem;

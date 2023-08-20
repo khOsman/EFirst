@@ -1,9 +1,9 @@
 import '../CSS/style.css';
 
-const Card = (title, price, discount, image) => {
-    const trendings = document.querySelector('#trendings');
-    const trendingsTemplate = `
-    <div class="card-container">
+const Card = (id, title, price, discount, image) => {
+    const trending = document.querySelector('#trendings');
+    const trendingTemplate = `
+    <div id="card${id}" class="card-container">
     <!-- item cover -->
     <div class="card-bg">
         <img src="${image}"
@@ -25,7 +25,8 @@ const Card = (title, price, discount, image) => {
     </div>
     </div>
 `;
-    trendings.innerHTML += trendingsTemplate;
+    trending.innerHTML += trendingTemplate;
+
 }
 
 export default Card;

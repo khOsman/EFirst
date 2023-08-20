@@ -16,15 +16,18 @@ button {
     display: none !important;
 }
 
+.active {
+    background: $color-dark-bg;
+    padding: 5px;
+    border-radius: 10px;
+}
+
 a {
     text-decoration: none;
+    color: $color-primary;
 
     &:link {
-        @include theme(color, $color-primary, $color-tan, "dark");
-    }
-
-    &:visited {
-        color: $color-success;
+        color: $color-primary;
     }
 
     &:hover {
@@ -33,7 +36,7 @@ a {
     }
 
     &:active {
-        color: $color-primary;
+        color: $color-light-bg;
     }
 }
 
@@ -120,6 +123,8 @@ li {
 }
 
 // --------DROPDOWN STYLES-----
+
+
 .dropdown-menu {
     position: absolute;
     z-index: 5;
@@ -138,6 +143,7 @@ li {
     font-weight: bold;
     padding: 1em;
     border-radius: 5px;
+
 }
 
 .platform-container {
@@ -197,6 +203,18 @@ li {
     }
 }
 
+
+.panel-cross-btn-container {
+    @include setFlex(center, center);
+}
+
+#panelCrossBtn {
+    margin-top: 0.5em;
+    padding: 5px 10px;
+    border: none;
+    background: $color-dark-bg;
+    color: $color-light;
+}
 
 // ----------------------------
 
