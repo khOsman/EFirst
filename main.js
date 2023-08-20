@@ -86,3 +86,28 @@ platformItems.map(item => PlatformItem(item.title, item.icon, "platform-item", "
 prepaidItems.map(item => PlatformItem(item.title, item.icon, "prepaid-item", "#prepaidBody"));
 
 
+const crossBtn = document.getElementById('crossBtn');
+const searchBtn = document.getElementById('searchBtn');
+const searchNavContainer = document.getElementById('searchNavContainer');
+const searchBarInput = document.getElementById('searchBarInput');
+
+const handleSearchBtn = () => {
+    searchBtn.addEventListener('click', () => {
+        searchBarInput.classList.remove("hide");
+        searchNavContainer.classList.add("hide");
+        console.log('searchBtn', isClicked);
+    });
+}
+
+const handleCrossBtn = () => {
+
+    crossBtn.addEventListener('click', () => {
+        searchBarInput.classList.add("hide");
+        searchNavContainer.classList.remove("hide");
+        console.log('searchBtn', isClicked);
+    });
+
+}
+
+handleSearchBtn();
+handleCrossBtn();
