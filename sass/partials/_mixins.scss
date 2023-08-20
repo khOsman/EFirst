@@ -23,13 +23,16 @@
     background: linear-gradient(90deg, rgba(13, 20, 33, 1) 0%, rgba(40, 53, 73, 1) 43%, rgba(63, 73, 92, 0.9738489145658263) 100%);
 }
 
-@mixin setFlex($justify-content, $align-items, $gap: 10px, $direction: row) {
+@mixin setFlex($justify-content, $align-items, $gap: 10px, $direction: row, $wrap: "wrap") {
     display: flex;
     flex-direction: $direction;
     justify-content: $justify-content;
     align-items: $align-items;
     gap: $gap;
-    flex-wrap: wrap;
+
+    @if($wrap =="wrap") {
+        flex-wrap: wrap;
+    }
 }
 
 @mixin setGrid($column: 3, $fraction: 1fr, $gap: 20px) {
@@ -54,7 +57,7 @@
     height: $height;
 
     background: {
-        image: url('../public/images/b3.webp');
+        image: url('/images/b3.webp');
         repeat: no-repeat;
         position: center;
         size: cover;
